@@ -1,12 +1,9 @@
 import pandas as pd
 
-#EXTRACT
-
+# EXTRACT
 df = pd.read_csv("Hate_Crimes_2017-2025.csv")
-df.head()
 
-#TRANSFORM
-
+# TRANSFORM
 def transform_data(df):
     # Eliminar filas con valores vacíos
     df = df.dropna()
@@ -23,14 +20,11 @@ def transform_data(df):
 print("Antes:")
 print(df.head())
 
+# LOAD
+df_transformado = transform_data(df)
 
 print("Después:")
-display(df_transformado.head())
-
-#LOAD
-
-df_transformado = transform_data(df)
+print(df_transformado.head())
 
 # Guardar en un nuevo CSV
 df_transformado.to_csv("hate_crimes_limpio.csv", index=False)
-
