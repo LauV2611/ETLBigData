@@ -21,7 +21,8 @@ def transform_data(df):
     return df
 
 print("Antes:")
-display(df.head())
+print(df.head())
+
 
 print("Después:")
 display(df_transformado.head())
